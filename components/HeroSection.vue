@@ -10,36 +10,36 @@
     </div>
 
     <!-- Content -->
-    <div class="relative z-10 container mx-auto px-6 text-center">
+    <div class="relative z-10 container mx-auto px-4 sm:px-6 text-center">
       <div class="max-w-4xl mx-auto">
         <!-- Badge -->
-        <div class="inline-flex items-center px-4 py-2 bg-accent-gold/20 backdrop-blur-sm rounded-full mb-8 animate-fade-in">
-          <span class="text-accent-gold text-sm font-semibold">🚀 Program VA Terbaik 2024</span>
+        <div class="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-accent-gold/20 backdrop-blur-sm rounded-full mb-6 sm:mb-8 animate-fade-in">
+          <span class="text-accent-gold text-xs sm:text-sm font-semibold">🚀 Program VA Terbaik 2024</span>
         </div>
 
         <!-- Headline -->
-        <h1 class="text-5xl md:text-7xl font-serif font-bold text-white mb-6 animate-slide-up">
-          Ubah Keahlian Anda
-          <span class="block text-accent-gold">Menjadi Karier Global</span>
-          yang Fleksibel
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-serif font-bold text-white mb-4 sm:mb-6 animate-slide-up leading-tight">
+          Ubah Keahlian
+          <span class="block text-accent-gold">Menjadi Karier</span>
+          <span class="block text-accent-gold">Global</span>
         </h1>
 
         <!-- Sub-headline -->
-        <p class="text-xl md:text-2xl text-primary-200 mb-12 max-w-3xl mx-auto leading-relaxed animate-slide-up delay-200">
+        <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-primary-200 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed animate-slide-up delay-200 px-2">
           Kuasai keterampilan Virtual Assistant profesional dan dapatkan kebebasan bekerja dari mana saja.
           Bergabunglah dengan akademi elit yang menjembatani Anda dengan peluang kerja internasional.
         </p>
 
         <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-slide-up delay-400">
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-12 sm:mb-16 animate-slide-up delay-400 px-4">
           <button
-            class="px-8 py-4 bg-gradient-to-r from-accent-gold to-accent-blue text-white font-bold text-lg rounded-full transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-accent-gold/25"
+            class="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-accent-gold to-accent-blue text-white font-bold text-base sm:text-lg rounded-full transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-accent-gold/25"
             @click="handlePrimaryCTA"
           >
             Daftar Kelas Sekarang
           </button>
           <button
-            class="px-8 py-4 border-2 border-white text-white font-bold text-lg rounded-full transform transition-all duration-300 hover:bg-white hover:text-primary-900"
+            class="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border-2 border-white text-white font-bold text-base sm:text-lg rounded-full transform transition-all duration-300 hover:bg-white hover:text-primary-900"
             @click="handleSecondaryCTA"
           >
             Download Kurikulum
@@ -47,20 +47,20 @@
         </div>
 
         <!-- Trust Indicators -->
-        <div class="flex flex-col md:flex-row items-center justify-center gap-8 text-primary-200 animate-fade-in delay-600">
-          <div class="flex items-center gap-2">
-            <span class="text-2xl">👥</span>
-            <span class="text-sm font-medium">500+ Alumni Berhasil</span>
+        <div class="flex flex-col gap-4 sm:gap-6 md:flex-row md:items-center md:justify-center md:gap-8 text-primary-200 animate-fade-in delay-600">
+          <div class="flex items-center justify-center gap-2">
+            <span class="text-xl sm:text-2xl">👥</span>
+            <span class="text-xs sm:text-sm font-medium">500+ Alumni Berhasil</span>
           </div>
           <div class="hidden md:block w-px h-6 bg-primary-600"></div>
-          <div class="flex items-center gap-2">
-            <span class="text-2xl">🌍</span>
-            <span class="text-sm font-medium">Koneksi Global</span>
+          <div class="flex items-center justify-center gap-2">
+            <span class="text-xl sm:text-2xl">🌍</span>
+            <span class="text-xs sm:text-sm font-medium">Koneksi Global</span>
           </div>
           <div class="hidden md:block w-px h-6 bg-primary-600"></div>
-          <div class="flex items-center gap-2">
-            <span class="text-2xl">⭐</span>
-            <span class="text-sm font-medium">Rating 4.9/5.0</span>
+          <div class="flex items-center justify-center gap-2">
+            <span class="text-xl sm:text-2xl">⭐</span>
+            <span class="text-xs sm:text-sm font-medium">Rating 4.9/5.0</span>
           </div>
         </div>
       </div>

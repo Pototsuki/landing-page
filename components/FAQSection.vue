@@ -1,12 +1,12 @@
 <template>
-  <section id="faq" class="py-24 bg-gradient-to-br from-primary-900 to-primary-800">
-    <div class="container mx-auto px-6">
+  <section id="faq" class="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-primary-900 to-primary-800">
+    <div class="container mx-auto px-4 sm:px-6">
       <!-- Section Header -->
-      <div class="text-center mb-20">
-        <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
+      <div class="text-center mb-12 sm:mb-16 lg:mb-20">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-4 sm:mb-6">
           Frequently Asked Questions
         </h2>
-        <p class="text-xl text-primary-200 max-w-3xl mx-auto">
+        <p class="text-base sm:text-lg md:text-xl text-primary-200 max-w-3xl mx-auto px-4">
           Temukan jawaban untuk pertanyaan yang sering diajukan tentang program kami
         </p>
       </div>
@@ -19,16 +19,16 @@
           class="mb-4"
         >
           <button
-            class="w-full text-left bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 transition-all duration-300 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-accent-gold"
+            class="w-full text-left bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 sm:p-6 transition-all duration-300 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-accent-gold"
             @click="toggleFAQ(index)"
           >
             <div class="flex items-center justify-between">
-              <h3 class="text-lg md:text-xl font-semibold text-white pr-4">
+              <h3 class="text-base sm:text-lg md:text-xl font-semibold text-white pr-4">
                 {{ faq.question }}
               </h3>
               <div class="flex-shrink-0">
                 <svg
-                  class="w-6 h-6 text-accent-gold transform transition-transform duration-300"
+                  class="w-5 h-5 sm:w-6 sm:h-6 text-accent-gold transform transition-transform duration-300"
                   :class="{ 'rotate-180': faq.isOpen }"
                   fill="none"
                   stroke="currentColor"
@@ -44,20 +44,20 @@
             class="overflow-hidden transition-all duration-300"
             :class="faq.isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'"
           >
-            <div class="bg-white/5 backdrop-blur-sm border-l-4 border-accent-gold rounded-b-xl p-6 mt-2">
-              <div class="text-primary-200 leading-relaxed" v-html="faq.answer"></div>
+            <div class="bg-white/5 backdrop-blur-sm border-l-4 border-accent-gold rounded-b-xl p-4 sm:p-6 mt-2">
+              <div class="text-primary-200 leading-relaxed text-sm sm:text-base" v-html="faq.answer"></div>
             </div>
           </div>
         </div>
       </div>
 
       <!-- Still Have Questions -->
-      <div class="text-center mt-16">
-        <div class="inline-flex flex-col items-center p-8 bg-gradient-to-r from-accent-gold/20 to-accent-blue/20 backdrop-blur-sm rounded-2xl border border-white/20">
-          <h3 class="text-2xl font-bold text-white mb-4">Masih memiliki pertanyaan?</h3>
-          <p class="text-primary-200 mb-6">Tim kami siap membantu Anda menemukan program yang tepat</p>
+      <div class="text-center mt-12 sm:mt-16">
+        <div class="inline-flex flex-col items-center p-6 sm:p-8 bg-gradient-to-r from-accent-gold/20 to-accent-blue/20 backdrop-blur-sm rounded-2xl border border-white/20 max-w-md mx-auto">
+          <h3 class="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">Masih memiliki pertanyaan?</h3>
+          <p class="text-primary-200 mb-4 sm:mb-6 text-sm sm:text-base">Tim kami siap membantu Anda menemukan program yang tepat</p>
           <button
-            class="px-8 py-4 bg-gradient-to-r from-accent-gold to-accent-blue text-white font-bold rounded-xl transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-accent-gold/25"
+            class="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-accent-gold to-accent-blue text-white font-bold rounded-xl transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-accent-gold/25 text-sm sm:text-base"
             @click="handleContactCTA"
           >
             Hubungi Kami via WhatsApp

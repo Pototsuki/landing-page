@@ -9,23 +9,24 @@
           : 'bg-white/80 backdrop-blur-sm'
     ]"
   >
-    <div class="container mx-auto px-6 py-4">
+    <div class="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
       <div class="flex items-center justify-between">
         <!-- Logo -->
         <div class="flex items-center">
-          <NuxtLink to="/" class="flex items-center space-x-2 group">
-            <div class="w-10 h-10 rounded-lg bg-gradient-to-r from-accent-gold to-accent-blue flex items-center justify-center transform transition-transform duration-300 group-hover:scale-110">
-              <span class="text-white font-bold text-lg">RFH</span>
+          <NuxtLink to="/" class="flex items-center space-x-2 sm:space-x-3 group">
+            <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-r from-accent-gold to-accent-blue flex items-center justify-center transform transition-transform duration-300 group-hover:scale-110">
+              <span class="text-white font-bold text-sm sm:text-lg">RFH</span>
             </div>
             <span
-              class="text-xl font-bold transition-colors duration-300"
+              class="text-base sm:text-xl font-bold transition-colors duration-300"
               :class="[
                 scrolled || isOnDarkSection
                   ? 'text-white'
                   : 'text-primary-900'
               ]"
             >
-              Remote For Hive
+              <span class="hidden sm:inline">Remote For Hive</span>
+              <span class="sm:hidden">RFH</span>
             </span>
           </NuxtLink>
         </div>
@@ -69,7 +70,7 @@
 
         <!-- CTA Button -->
         <button
-          class="px-6 py-2 bg-gradient-to-r from-accent-gold to-accent-blue text-white font-semibold rounded-full transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
+          class="hidden sm:block px-4 sm:px-6 py-2 bg-gradient-to-r from-accent-gold to-accent-blue text-white font-semibold rounded-full transform transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm sm:text-base"
           @click="handleCTAClick"
         >
           Daftar Sekarang
@@ -77,7 +78,7 @@
 
         <!-- Mobile Menu Toggle -->
         <button
-          class="md:hidden text-2xl"
+          class="md:hidden text-xl sm:text-2xl"
           :class="[
             scrolled || isOnDarkSection
               ? 'text-white'
@@ -91,11 +92,11 @@
       </div>
 
       <!-- Mobile Menu -->
-      <div v-if="mobileMenuOpen" class="md:hidden mt-4 pb-4">
-        <div class="flex flex-col space-y-4">
+      <div v-if="mobileMenuOpen" class="md:hidden mt-4 pb-4 border-t border-white/20 pt-4">
+        <div class="flex flex-col space-y-3 sm:space-y-4">
           <button
             @click="scrollToSectionMobile('hero')"
-            class="transition-colors duration-300 hover:text-accent-gold text-left"
+            class="transition-colors duration-300 hover:text-accent-gold text-left py-2 text-base"
             :class="[
               scrolled || isOnDarkSection
                 ? 'text-white'
@@ -106,7 +107,7 @@
           </button>
           <button
             @click="scrollToSectionMobile('programs')"
-            class="transition-colors duration-300 hover:text-accent-gold text-left"
+            class="transition-colors duration-300 hover:text-accent-gold text-left py-2 text-base"
             :class="[
               scrolled || isOnDarkSection
                 ? 'text-white'
@@ -117,7 +118,7 @@
           </button>
           <button
             @click="scrollToSectionMobile('faq')"
-            class="transition-colors duration-300 hover:text-accent-gold text-left"
+            class="transition-colors duration-300 hover:text-accent-gold text-left py-2 text-base"
             :class="[
               scrolled || isOnDarkSection
                 ? 'text-white'
@@ -125,6 +126,13 @@
             ]"
           >
             FAQ
+          </button>
+          <!-- Mobile CTA Button -->
+          <button
+            class="w-full py-3 bg-gradient-to-r from-accent-gold to-accent-blue text-white font-semibold rounded-full transform transition-all duration-300 hover:scale-105 hover:shadow-lg text-base mt-4"
+            @click="handleMobileCTA"
+          >
+            Daftar Sekarang
           </button>
         </div>
       </div>
@@ -168,6 +176,11 @@ const scrollToSectionMobile = (sectionId) => {
 const handleCTAClick = () => {
   // Redirect to WhatsApp or registration page
   window.open('https://wa.me/628123456789?text=Halo,%20saya%20tertarik%20untuk%20mendaftar%20kelas%20Remote%20For%20Hive', '_blank')
+}
+
+const handleMobileCTA = () => {
+  handleCTAClick()
+  closeMobileMenu()
 }
 
 onMounted(() => {
