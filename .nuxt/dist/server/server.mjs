@@ -1,0 +1,1 @@
+export { default } from "file:///C:/Users/HP/Remote%20For%20Hive/landing-page/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"

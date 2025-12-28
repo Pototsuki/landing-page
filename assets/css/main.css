@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-pototsuki-cream-light font-quicksand text-gray-700;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins font-bold;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-pink text-white px-8 py-4 rounded-3xl font-semibold shadow-cute hover:shadow-cute-lg hover:scale-105 transition-all duration-300;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-pototsuki-purple-dark px-8 py-4 rounded-3xl font-semibold shadow-soft hover:shadow-soft-lg hover:scale-105 transition-all duration-300 border-2 border-pototsuki-purple;
+  }
+
+  .card-cute {
+    @apply bg-white rounded-3xl shadow-soft hover:shadow-float transition-all duration-300 p-8;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-6 py-16 md:py-24;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-pototsuki-pink-dark via-pototsuki-purple-dark to-pototsuki-mint-dark bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
