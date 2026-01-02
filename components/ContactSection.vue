@@ -50,7 +50,10 @@
         <!-- Right Content - Form -->
         <div class="animate-slide-up" style="animation-delay: 0.2s">
           <BaseCard class="!bg-white/90 backdrop-blur-sm">
-            <form @submit.prevent="handleSubmit" class="space-y-6">
+            <form
+              @submit.prevent="handleSubmit"
+              class="space-y-6"
+            >
               <div>
                 <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">
                   Your Name ✨
@@ -109,8 +112,9 @@
                 />
               </div>
 
-              <BaseButton type="submit" variant="primary" size="lg" class="w-full">
-                <span v-if="!submitted">Send Message 🚀</span>
+              <BaseButton type="submit" variant="primary" size="lg" class="w-full" :disabled="submitting">
+                <span v-if="!submitting && !submitted">Send Message 🚀</span>
+                <span v-else-if="submitting">Sending... ⏳</span>
                 <span v-else>Message Sent! 🎉</span>
               </BaseButton>
             </form>
@@ -130,21 +134,48 @@ const form = ref({
 })
 
 const submitted = ref(false)
+const submitting = ref(false)
 
-const handleSubmit = () => {
-  // In a real application, you would send this to your backend
-  console.log('Form submitted:', form.value)
-  submitted.value = true
+const handleSubmit = async () => {
+  submitting.value = true
 
-  // Reset after 3 seconds
-  setTimeout(() => {
-    submitted.value = false
-    form.value = {
-      name: '',
-      email: '',
-      package: '',
-      message: ''
+  try {
+    const response = await fetch('https://formspree.io/f/mvzgaoae', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        name: form.value.name,
+        email: form.value.email,
+        package: form.value.package,
+        message: form.value.message
+      })
+    })
+
+    if (response.ok) {
+      submitted.value = true
+      submitting.value = false
+
+      // Reset after 3 seconds
+      setTimeout(() => {
+        submitted.value = false
+        form.value = {
+          name: '',
+          email: '',
+          package: '',
+          message: ''
+        }
+      }, 3000)
+    } else {
+      const data = await response.json()
+      alert('Error: ' + (data.error || 'Something went wrong'))
+      submitting.value = false
     }
-  }, 3000)
+  } catch (error) {
+    alert('Error submitting form. Please try again.')
+    submitting.value = false
+  }
 }
 </script>
